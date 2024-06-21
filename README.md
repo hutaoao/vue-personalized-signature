@@ -14,27 +14,26 @@
 ## 安装
 
 ``` bash
-npm install vue-esign --save
+npm install vue-personalized-signature -S
 ```
 
 ## 使用
 1. 全局使用 、局部
 ```js
 // 全局 vue2 main.js
-import vueEsign from 'vue-esign'
+import vueEsign from 'vue-personalized-signature'
 Vue.use(vueEsign)
 // 全局vue3 main.js
 import { createApp } from 'vue'
 import App from './App.vue'
-import vueEsign from 'vue-esign'
+import vueEsign from 'vue-personalized-signature'
 const app = createApp(App)
 app.use(vueEsign)
 // 局部
-import vueEsign from 'vue-esign'
+import vueEsign from 'vue-personalized-signature'
 components: { vueEsign }
 ```
-2. 页面中使用
-   **必须设置 `ref` ，用来调用组件的两个内置方法 `reset()` 和 `generate()`**
+2. 页面中使用**必须设置 `ref` ，用来调用组件的两个内置方法 `reset()` 和 `generate()`**
 
 无需给组件设置 `style` 的宽高，如果画布的 `width`属性值没超出父元素的样式宽度，则该组件的样式宽度就是画布宽度，超出的话，组件样式宽度则是父元素的100%；  所以只需设置好父元素的宽度即可；
 ```html

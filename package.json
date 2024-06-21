@@ -1,6 +1,6 @@
 {
   "name": "vue-personalized-signature",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "关于vue的一个canvas签名组件",
   "main": "src/index.js",
   "repository": {

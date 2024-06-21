@@ -102,7 +102,7 @@ export default {
       const realw = parseFloat(window.getComputedStyle(canvas).width)
       canvas.style.height = this.ratio * realw + "px";
       this.canvasTxt = canvas.getContext('2d')
-      this.canvasTxt.scale(1 * this.sratio, 1 * this.sratio)
+      this.canvasTxt.scale(this.sratio, this.sratio)
       this.sratio = realw / this.width
       this.canvasTxt.scale(1 / this.sratio, 1 / this.sratio)
     },
@@ -213,7 +213,9 @@ export default {
       this.points.push(obj)
       this.points.push({x: -1, y: -1})
     },
-    // 操作
+    /**
+     * 生成图片
+     * */
     generate (options) {
       let imgFormat = options && options.format ? options.format: this.format
       let imgQuality = options && options.quality ? options.quality: this.quality
@@ -249,6 +251,9 @@ export default {
       })
       return pm
     },
+    /**
+     * 重置画布
+     * */
     reset () {
       this.canvasTxt.clearRect(
         0,
@@ -265,10 +270,13 @@ export default {
       this.resultImg = ''
     },
     getCropArea (imgData) {
-      var topX = this.$refs.canvas.width; var btmX = 0; var topY = this.$refs.canvas.height; var btnY = 0
-      for (var i = 0; i < this.$refs.canvas.width; i++) {
-        for (var j = 0; j < this.$refs.canvas.height; j++) {
-          var pos = (i + this.$refs.canvas.width * j) * 4
+      let topX = this.$refs.canvas.width;
+      let btmX = 0;
+      let topY = this.$refs.canvas.height;
+      let btnY = 0
+      for (let i = 0; i < this.$refs.canvas.width; i++) {
+        for (let j = 0; j < this.$refs.canvas.height; j++) {
+          let pos = (i + this.$refs.canvas.width * j) * 4
           if (imgData[pos] > 0 || imgData[pos + 1] > 0 || imgData[pos + 2] || imgData[pos + 3] > 0) {
             btnY = Math.max(j, btnY)
             btmX = Math.max(i, btmX)

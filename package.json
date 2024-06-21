@@ -1,0 +1,28 @@
+{
+  "name": "vue-personalized-signature",
+  "version": "1.0.0",
+  "description": "关于vue的一个canvas签名组件",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hutaoao/vue-personalized-signature.git"
+  },
+  "keywords": [
+    "vue",
+    "canvas"
+  ],
+  "author": "hutaoao@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hutaoao/vue-personalized-signature/issues"
+  },
+  "homepage": "https://hutaoao.github.io/vue-personalized-signature/demo/",
+  "dependencies": {
+    "vue": "^2.5.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
